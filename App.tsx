@@ -12,46 +12,6 @@ class App extends React.Component {
     super(props);
     this.state = {data: []};
   }
-
-  HomeScreen = ({navigation}) => {
-    const {data} = this.state;
-    console.log('hehe', data);
-    // const array = Object.values(data);
-    return (
-      <View style={{alignItems: 'center', justifyContent: 'center'}}>
-        {/* <Text>Home Screen</Text> */}
-        <FlatList
-          data={data}
-          renderItem={(data) => {
-            console.log('dddd', data);
-            return (
-              <View style={{backgroundColor: 'red', flex: 1}}>
-                <Text>hy</Text>
-              </View>
-            );
-          }}
-        />
-        <Button
-          title="Go to Details"
-          onPress={() =>
-            navigation.navigate('Details', {
-              allData: 'hehehehehhehe',
-            })
-          }
-        />
-      </View>
-    );
-  };
-
-  DetailsScreen = ({route, navigation}) => {
-    const {allData} = route.params;
-    // console.log(allData);
-    return (
-      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <Text>Details Screen</Text>
-      </View>
-    );
-  };
   render() {
     return (
       <NavigationContainer>
